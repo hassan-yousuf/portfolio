@@ -12,16 +12,22 @@ const skills = [
 export default function Skills() {
   return (
     <section className="p-8" id="skills">
-      <h2 className="text-3xl font-bold mb-4">Skills</h2>
-      <div className="space-y-4">
+      <h2 className="text-3xl font-bold mb-6">Skills</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {skills.map(skill => (
-          <div key={skill.name}>
-            <div className="flex justify-between">
+          <div
+            key={skill.name}
+            className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 space-y-2 transition transform hover:scale-[1.02]"
+          >
+            <div className="flex justify-between text-sm font-medium text-gray-700 dark:text-gray-200">
               <span>{skill.name}</span>
               <span>{skill.level}%</span>
             </div>
             <div className="w-full bg-gray-300 rounded-full h-2 dark:bg-gray-700">
-              <div className="bg-blue-500 h-2 rounded-full" style={{ width: `${skill.level}%` }}></div>
+              <div
+                className="bg-blue-500 h-2 rounded-full"
+                style={{ width: `${skill.level}%` }}
+              ></div>
             </div>
           </div>
         ))}
